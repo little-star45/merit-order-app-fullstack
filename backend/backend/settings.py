@@ -158,4 +158,6 @@ SIMPLE_JWT = {
 
 AUTH_USER_MODEL = "users.CustomUser" 
 
-SIGNING_KEY = config(SECRET_KEY)
+AUTHENTICATION_BACKENDS = ['users.auth_backend.UserCustomBackend']
+
+SIGNING_KEY = config('SECRET_KEY')
