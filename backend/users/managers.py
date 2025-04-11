@@ -20,7 +20,7 @@ class CustomUserManager(BaseUserManager):
         user = self.model(username=username, **kwargs)
         user.set_password(password)
         user.save()
-
+        print(user.is_superuser)
         if user.is_superuser:
             permissions = Permission.objects.filter(codename__in=['view_own_projects', 'add_new_project', 'del_own_project', 'view_all_projects', 'del_all_projects'])
         else :
